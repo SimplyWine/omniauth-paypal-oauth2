@@ -28,6 +28,7 @@ module OmniAuth
       uid { @parsed_uid ||= (%r{\/([^\/]+)\z}.match raw_info['user_id'])[1] }
 
       info do
+=begin        
         prune!(
           'name' => raw_info['name'],
           'email' => (raw_info['emails'].detect do |email|
@@ -35,6 +36,7 @@ module OmniAuth
           end || {})['value'],
           'location' => (raw_info['address'] || {})['locality']
         )
+=end      
       end
 
       extra do
